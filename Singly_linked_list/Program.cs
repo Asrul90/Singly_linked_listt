@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Singly_linked_list
 {
@@ -34,7 +37,7 @@ namespace Singly_linked_list
             newnode.name = nm;
             if ((START != null) && (rollNo <= START.rollNumber)) ;
             {
-                if ((START != null) && (rollNo <= START.rollNumber)) ;
+                if ((START != null) && (rollNo == START.rollNumber)) ;
                 {
                     Console.WriteLine();
                     return;
@@ -52,10 +55,37 @@ namespace Singly_linked_list
                 if (rollNo == current.rollNumber)
                 {
                     Console.WriteLine();
-                    return ;
+                    return;
                 }
-
+                previous.next = current;
+                previous.next = newnode;
             }
+            newnode.next = current;
+            previous.next = newnode;
+        }
+        public bool delnode(int rollNo)
+        {
+            Node previous, current;
+            previous = current = null;
+            if (search(rollNo, ref previous, ref current) == false)
+                return false;
+            if (current == START)
+                START = START.next;
+            return true;
+        }
+        public bool search(int rollNo, ref Node previous, ref Node current)
+        {
+            previous = START;
+            current = START;
+            while ((current != null) && (rollNo != current.rollNumber))
+            {
+                previous = current;
+                current = current.next;
+            }
+            if (current == null)
+                return false;
+            else
+                return true;
         }
     }
     class Program
