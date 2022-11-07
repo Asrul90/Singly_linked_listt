@@ -102,8 +102,14 @@ namespace Singly_linked_list
 
             }
         }
-
-    class Program
+        public bool listEmpty()
+        {
+            if (START == null)
+                return true;
+            else
+                return false;
+        }
+        class Program
     {
         static void Main(string[] args)
         {
