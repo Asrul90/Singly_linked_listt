@@ -128,7 +128,22 @@ namespace Singly_linked_list
                         char ch = Convert.ToChar(Console.ReadLine());
                         switch (ch)
                         {
+                            case '1':
+                                {
+                                    obj.addNote();
+                                }
+                                break;
+                            case '2':
+                                {
+                                    if (obj.listEmpty())
+                                    {
+                                        Console.WriteLine("\nlist is empty");
+                                        break;
+                                        {
 
+                                        }
+                                    }
+                                }
                         }
                     }
                 }
