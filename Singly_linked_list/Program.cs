@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace singly_linked_list
 {
-    //each node consist of the information part and link to the next node
+    //each node consist of the information part and link to the next node//
     class node
     {
         public int rollnumber;
@@ -186,7 +186,6 @@ namespace singly_linked_list
                 catch (Exception)
                 {
                     Console.WriteLine("\ncheck for the value enterd");
-
                 }
             }
         }
