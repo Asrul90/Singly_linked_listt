@@ -36,7 +36,7 @@ namespace singly_linked_list
             {
                 if ((START != null) && (rollNo == START.rollnumber))
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("\nDuplicat roll number not allowet\n");
                     return;
                 }
                 newnode.next = START;
@@ -51,11 +51,11 @@ namespace singly_linked_list
             {
                 if (rollNo == current.rollnumber)
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("\nDuplicat roll number not allowet\n");
                     return;
                 }
-                previous.next = current;
-                previous.next = newnode;
+                previous = current;
+                current  = current.next;
             }
             newnode.next = current;
             previous.next = newnode;
